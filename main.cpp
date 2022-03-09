@@ -1,14 +1,17 @@
 #include <iostream>
 
-int fib(int n) {
-    int res;
-    if (n == 1) res = 0;
-    else if (n == 2 || n == 3) res = 1;
-    else res = fib(n - 1) + fib(n - 2);
-    return res; 
+void fib(int n) {
+    int a = 0;
+    int b = 1;
+    for (int i = 0; i < n; ++i) {
+        std::cout << a << std::endl;
+        int temp = a;
+        a += b;
+        b = temp;
+    } 
 }
 
 int main() {
-	std::cout << fib(10);
-	return 0;
+    fib(10);
+    return 0;
 }
